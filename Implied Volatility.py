@@ -17,11 +17,11 @@ def PriceMinusBS(P,T,K,S0,r,sigma):
 def func(x):
 	return PriceMinusBS(60,1,100,100,0.01,x)
 
-def secant(f,x0,x1, TOL=0.001, NMAX=100):
+def secant(f,x0,x1, tol=0.001, nmax=100):
 	n=1
-	while n<=NMAX:
+	while n<=nmax:
 		x2 = x1 - f(x1)*((x1-x0)/(f(x1)-f(x0)))
-		if x2-x1 < TOL:
+		if x2-x1 < tol:
 			return x2
 		else:
 			x0 = x1
